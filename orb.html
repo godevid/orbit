@@ -11,7 +11,7 @@
     }
 
     .universe {
-      position: fixed;
+      position: absolute;
       width: 100vw;
       height: 100vh;
       top: 0;
@@ -24,13 +24,12 @@
       position: absolute;
       width: 60px;
       height: 60px;
-      background: radial-gradient(circle, rgba(255,204,0,0.3), rgba(255,136,0,0.2));
+      background: radial-gradient(circle, #ffcc00, #ff8800);
       border-radius: 50%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      box-shadow: 0 0 30px 10px rgba(255,170,0,0.2);
-      z-index: 1;
+      box-shadow: 0 0 30px 10px #ffaa00aa;
     }
 
     .orbit {
@@ -41,7 +40,6 @@
       border-radius: 50%;
       transform: translate(-50%, -50%);
       animation: rotate linear infinite;
-      z-index: 2;
     }
 
     .planet {
@@ -61,7 +59,7 @@
       100% { transform: translate(-50%, -50%) rotate(360deg); }
     }
 
-    /* Orbit Sizes and Animation Durations */
+    /* Add multiple orbits with different sizes and speeds */
     .orbit1 { width: 200px; height: 200px; animation-duration: 10s; }
     .orbit2 { width: 300px; height: 300px; animation-duration: 12s; }
     .orbit3 { width: 400px; height: 400px; animation-duration: 15s; }
@@ -84,7 +82,7 @@
   <div class="universe">
     <div class="sun"></div>
 
-    <!-- Add multiple orbits with planets -->
+    <!-- Add multiple orbits with seven planets -->
     <div class="orbit orbit1">
       <div class="planet"></div>
     </div>
