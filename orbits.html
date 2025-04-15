@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Orbiting Planets Background</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: radial-gradient(circle at center, #000010, #000000);
+    }
+
+    .universe {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .sun {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      background: radial-gradient(circle, rgba(255,204,0,0.3), rgba(255,136,0,0.2));
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 30px 10px rgba(255,170,0,0.2);
+      z-index: 1;
+    }
+
+    .orbit {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border: 1px dashed rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      animation: rotate linear infinite;
+      z-index: 2;
+    }
+
+    .planet {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+      background: #3498db;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #3498db;
+    }
+
+    @keyframes rotate {
+      0% { transform: translate(-50%, -50%) rotate(0deg); }
+      100% { transform: translate(-50%, -50%) rotate(360deg); }
+    }
+
+    /* Orbit Sizes and Animation Durations */
+    .orbit1 { width: 200px; height: 200px; animation-duration: 10s; }
+    .orbit2 { width: 300px; height: 300px; animation-duration: 12s; }
+    .orbit3 { width: 400px; height: 400px; animation-duration: 15s; }
+    .orbit4 { width: 500px; height: 500px; animation-duration: 18s; }
+    .orbit5 { width: 600px; height: 600px; animation-duration: 22s; }
+    .orbit6 { width: 700px; height: 700px; animation-duration: 25s; }
+    .orbit7 { width: 800px; height: 800px; animation-duration: 30s; }
+
+    /* Planet Colors and Sizes */
+    .orbit1 .planet { background: #1abc9c; width: 14px; height: 14px; }
+    .orbit2 .planet { background: #e67e22; width: 18px; height: 18px; }
+    .orbit3 .planet { background: #9b59b6; width: 22px; height: 22px; }
+    .orbit4 .planet { background: #f39c12; width: 25px; height: 25px; }
+    .orbit5 .planet { background: #e74c3c; width: 28px; height: 28px; }
+    .orbit6 .planet { background: #3498db; width: 32px; height: 32px; }
+    .orbit7 .planet { background: #2ecc71; width: 36px; height: 36px; }
+  </style>
+</head>
+<body>
+  <div class="universe">
+    <div class="sun"></div>
+
+    <!-- Add multiple orbits with planets -->
+    <div class="orbit orbit1">
+      <div class="planet"></div>
+    </div>
+    <div class="orbit orbit2">
+      <div class="planet"></div>
+    </div>
+    <div class="orbit orbit3">
+      <div class="planet"></div>
+    </div>
+    <div class="orbit orbit4">
+      <div class="planet"></div>
+    </div>
+    <div class="orbit orbit5">
+      <div class="planet"></div>
+    </div>
+    <div class="orbit orbit6">
+      <div class="planet"></div>
+    </div>
+    <div class="orbit orbit7">
+      <div class="planet"></div>
+    </div>
+  </div>
+</body>
+</html>
