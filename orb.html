@@ -11,25 +11,39 @@
     }
 
     .universe {
-      position: absolute;
+      position: fixed;
       width: 100vw;
       height: 100vh;
-      top: 100;
+      top: 0;
       left: 0;
       overflow: hidden;
       z-index: -1;
+    }
+
+    /* 🌌 Add PNG background from URL */
+    .background-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: auto;
+      transform: translate(-50%, -50%);
+      opacity: 0.3;
+      pointer-events: none;
+      z-index: 0;
     }
 
     .sun {
       position: absolute;
       width: 60px;
       height: 60px;
-      background: radial-gradient(circle, #ffcc00, #ff8800);
+      background: radial-gradient(circle, rgba(255,204,0,0.3), rgba(255,136,0,0.2));
       border-radius: 50%;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      box-shadow: 0 0 30px 10px #ffaa00aa;
+      box-shadow: 0 0 30px 10px rgba(255,170,0,0.2);
+      z-index: 1;
     }
 
     .orbit {
@@ -40,6 +54,7 @@
       border-radius: 50%;
       transform: translate(-50%, -50%);
       animation: rotate linear infinite;
+      z-index: 2;
     }
 
     .planet {
@@ -59,20 +74,33 @@
       100% { transform: translate(-50%, -50%) rotate(360deg); }
     }
 
-    /* Add multiple orbits with different sizes and speeds */
+    /* Orbit Sizes and Animation Durations */
     .orbit1 { width: 200px; height: 200px; animation-duration: 10s; }
-    .orbit2 { width: 300px; height: 300px; animation-duration: 15s; }
-    .orbit3 { width: 400px; height: 400px; animation-duration: 20s; }
+    .orbit2 { width: 300px; height: 300px; animation-duration: 12s; }
+    .orbit3 { width: 400px; height: 400px; animation-duration: 15s; }
+    .orbit4 { width: 500px; height: 500px; animation-duration: 18s; }
+    .orbit5 { width: 600px; height: 600px; animation-duration: 22s; }
+    .orbit6 { width: 700px; height: 700px; animation-duration: 25s; }
+    .orbit7 { width: 800px; height: 800px; animation-duration: 30s; }
 
+    /* Planet Colors and Sizes */
     .orbit1 .planet { background: #1abc9c; width: 14px; height: 14px; }
     .orbit2 .planet { background: #e67e22; width: 18px; height: 18px; }
     .orbit3 .planet { background: #9b59b6; width: 22px; height: 22px; }
+    .orbit4 .planet { background: #f39c12; width: 25px; height: 25px; }
+    .orbit5 .planet { background: #e74c3c; width: 28px; height: 28px; }
+    .orbit6 .planet { background: #3498db; width: 32px; height: 32px; }
+    .orbit7 .planet { background: #2ecc71; width: 36px; height: 36px; }
   </style>
 </head>
 <body>
   <div class="universe">
+    <!-- ✅ PNG background image from link -->
+    <img src="https://pngimg.com/d/square_PNG17.png" class="background-image" alt="Background PNG" />
+
     <div class="sun"></div>
 
+    <!-- Add multiple orbits with planets -->
     <div class="orbit orbit1">
       <div class="planet"></div>
     </div>
@@ -80,6 +108,18 @@
       <div class="planet"></div>
     </div>
     <div class="orbit orbit3">
+      <div class="planet"></div>
+    </div>
+    <div class="orbit orbit4">
+      <div class="planet"></div>
+    </div>
+    <div class="orbit orbit5">
+      <div class="planet"></div>
+    </div>
+    <div class="orbit orbit6">
+      <div class="planet"></div>
+    </div>
+    <div class="orbit orbit7">
       <div class="planet"></div>
     </div>
   </div>
